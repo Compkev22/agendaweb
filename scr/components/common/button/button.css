@@ -1,0 +1,56 @@
+/* Botón contenedor */
+div[id] {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    border-radius: 16px;
+    cursor: pointer;
+ 
+    background: #ffffff;
+    backdrop-filter: blur(14px);
+ 
+    color: #000000;
+    transition:
+        background 0.3s,
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+ 
+/* Hover */
+div[id]:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+ 
+/* Active */
+div[id]:active {
+    transform: scale(0.97);
+}
+ 
+/* Contenedor de la imagen */
+.button-image {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+ 
+    background: linear-gradient(135deg, #35353a, #a38fd3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+/* Icono */
+.button-image img {
+    width: 22px;
+    height: 22px;
+}
+ 
+/* Texto */
+.button-text {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+}
