@@ -1,6 +1,9 @@
+import { ContactList } from "../contactos/db.js";
+
+
 let formulario = function () {
 
-    let formulario = document.createElement("section");
+    let formulario = document.createElement("form");
 
     let h3 = document.createElement("h3");
     h3.innerHTML ="Crear Contacto";
@@ -20,6 +23,23 @@ let formulario = function () {
     formulario.appendChild(nombre);
     formulario.appendChild(telefono);
     formulario.appendChild(button);
+
+
+    //Programacion del formulario
+
+    formulario.addEventListener("submit", (e) => {
+      e.preventDefault();  
+    let contacto = {
+        nombre: nombre.value,
+        telefono: telefono.value
+    };
+
+    nombre.value = "";
+    telefono.value = "";
+
+    console.log(contacto);
+    ContactList.push(contacto);
+});
 
     return formulario;
 }
