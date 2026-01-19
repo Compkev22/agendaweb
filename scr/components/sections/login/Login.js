@@ -47,7 +47,7 @@ let login = function () {
 
         if (usuarioValido) {
             // Login exitoso
-            console.log("✅ Login exitoso");
+            console.log("Login exitoso");
             // Guardar sesión
             sessionStorage.setItem("usuarioLogueado", usuarioInput);
             // Redirigir a app.html

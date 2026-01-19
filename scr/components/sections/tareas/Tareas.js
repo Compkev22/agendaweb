@@ -1,5 +1,6 @@
 import { ItemTarea } from "../../common/itemTarea/itemTarea.js";
 import { TareaList } from "./dbTarea.js";
+import { saveTareasToStorage } from "../../common/localStorage/Storage.js";
 
 function Tareas() {
     let sectionTareas = document.createElement("section");
@@ -106,15 +107,18 @@ function Tareas() {
                     (idx) => {
                         // Eliminar tarea
                         TareaList.splice(idx, 1);
+                        saveTareasToStorage(TareaList);
                         renderTareas();
                     },
                     (idx) => {
                         // Toggle completada
                         TareaList[idx].completada = !TareaList[idx].completada;
+                        saveTareasToStorage(TareaList);
                     },
                     (idx, nuevaPrioridad) => {
                         // Cambiar prioridad
                         TareaList[idx].prioridad = nuevaPrioridad;
+                        saveTareasToStorage(TareaList);
                         console.log(`Tarea "${TareaList[idx].nombre}" cambió a: ${nuevaPrioridad}`);
                     },
                     (tarea) => {

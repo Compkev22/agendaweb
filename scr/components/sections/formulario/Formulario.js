@@ -1,4 +1,5 @@
 import { ContactList } from "../contactos/db.js";
+import { saveContactsToStorage } from "../../common/localStorage/Storage.js";
 
 
 let formulario = function () {
@@ -37,8 +38,10 @@ let formulario = function () {
     nombre.value = "";
     telefono.value = "";
 
-    console.log(contacto);
+    console.log("Nuevo contacto:", contacto);
     ContactList.push(contacto);
+    saveContactsToStorage(ContactList);
+    alert("Contacto guardado exitosamente");
 });
 
     return formulario;
