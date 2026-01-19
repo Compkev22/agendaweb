@@ -10,11 +10,11 @@ let formulario = function () {
 
     let nombre = document.createElement("input");
     nombre.type = "text";
-    nombre.placeholder = "Nombre";
+    nombre.placeholder = "Ej: Lester Velásquez";
 
     let telefono = document.createElement("input");
     telefono.type = "text";
-    telefono.placeholder = "Teléfono";
+    telefono.placeholder = "Ej: 3125 0484";
 
     let button = document.createElement("button");
     button.innerHTML = "Guardar Contacto";

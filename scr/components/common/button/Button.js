@@ -1,28 +1,26 @@
-let Button = (title, id, img, callback) => {
-    let div = document.createElement("div");
-    div.id = id;
+let Button = (text, id, icon, onClick) => {
+    let button = document.createElement("button");
+    button.className = "button";
+    button.id = id;
 
-    let divImage = document.createElement("div");
-    divImage.className = 'button-image';
+    let img = document.createElement("img");
+    img.src = `./assets/icons/${icon}.svg`;
+    img.alt = text;
 
-    let imgIcon = document.createElement("img");
-    imgIcon.src = `./assets/icons/${img}.svg`;
-    imgIcon.alt = title;
-    divImage.appendChild(imgIcon);
+    let span = document.createElement("span");
+    span.textContent = text;
 
-    let p = document.createElement("div");
-    p.className = 'button-text';
-    p.textContent = title;
+    button.appendChild(img);
+    button.appendChild(span);
 
-    div.appendChild(divImage);
-    div.appendChild(p);
+    if (onClick) {
+        button.addEventListener("click", () => {
+            // Pasar el botón actual a la función onClick
+            onClick(button);
+        });
+    }
 
-    div.addEventListener("click", () =>  { 
-        callback(); 
-        console.log("Seccion Completada"); 
-    });
-    
-    return div;
+    return button;
 }
 
 export { Button };

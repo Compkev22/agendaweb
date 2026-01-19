@@ -2,26 +2,84 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
 
 #app {
     width: 100vw;
     height: 100vh;
-    
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 10px;
+    grid-template-columns: 280px 1fr;
+    gap: 0;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 #nav {
-    height: 100vh;
-    border: 1px solid #000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: fit-content;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
 }
 
 #container {
-    height: 100vh;
-    border: 1px solid #000;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    margin-left: 20px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Animación fade-in para transiciones */
+#container.fade-in {
+    animation: fadeInContainer 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInContainer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar personalizado */
+#nav::-webkit-scrollbar,
+#container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#nav::-webkit-scrollbar-track,
+#container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+#nav::-webkit-scrollbar-thumb,
+#container::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #667eea, #764ba2);
+    border-radius: 10px;
+}
+
+#nav::-webkit-scrollbar-thumb:hover,
+#container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #764ba2, #667eea);
 }
