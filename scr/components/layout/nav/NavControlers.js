@@ -5,7 +5,7 @@ import { formularioTarea } from "../../sections/formulariotarea/FormularioTarea.
 
 let container = document.getElementById("container");
 
-// Función para remover clase activa de todos los botones
+
 const removerClaseActiva = () => {
     const botones = document.querySelectorAll("#nav .button");
     botones.forEach(btn => btn.classList.remove("active"));

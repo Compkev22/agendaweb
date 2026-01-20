@@ -1,3 +1,7 @@
+.item-contacto-wrapper {
+    position: relative;
+}
+
 .item-contacto {
     display: flex;
     align-items: center;
@@ -59,4 +63,113 @@
     padding: 6px 14px;
     border-radius: 8px;
     margin: 0;
+}
+
+.item-contacto .btn-eliminar-contacto {
+    background: linear-gradient(135deg, #ff8a80 0%, #ff5252 100%);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 82, 82, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-contacto .btn-eliminar-contacto img {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    filter: brightness(0) invert(1);
+}
+
+.item-contacto .btn-eliminar-contacto:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 4px 12px rgba(255, 82, 82, 0.4);
+}
+
+.item-contacto .btn-eliminar-contacto:active {
+    transform: scale(0.95) rotate(0deg);
+}
+
+/* Modal de contacto */
+.modal-contacto {
+    max-width: 600px;
+    min-height: 400px;
+}
+
+.contacto-modal-info {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.contacto-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contacto-img-grande {
+    width: 180px;
+    height: 180px;
+    padding: 30px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(79, 172, 254, 0.3);
+}
+
+.contacto-detalles {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contacto-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.contacto-campo:last-child {
+    border-bottom: none;
+}
+
+.contacto-label {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contacto-valor {
+    font-size: 1rem;
+    color: #1f2937;
+    font-weight: 600;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contacto-modal-info {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .contacto-img-container {
+        justify-content: center;
+    }
+    
+    .contacto-img-grande {
+        width: 150px;
+        height: 150px;
+        padding: 25px;
+    }
 }

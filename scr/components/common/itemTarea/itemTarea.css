@@ -312,3 +312,39 @@
     background: #ff1744;
     transform: rotate(90deg);
 }
+
+
+@media (max-width: 600px) {
+    .item-tarea {
+        flex-wrap: wrap; /* Permitir que los elementos bajen de línea */
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .item-tarea .nombre-tarea {
+        width: 100%; /* El nombre ocupa toda la línea superior */
+        order: -1;   /* Ponerlo primero visualmente si quieres, o dejarlo normal */
+        margin-bottom: 5px;
+    }
+
+    /* Ajustar los controles de abajo */
+    .item-tarea .prioridad-container,
+    .item-tarea .btn-ver-mas,
+    .item-tarea .btn-eliminar {
+        flex-grow: 1; /* Que crezcan para llenar el espacio */
+        justify-content: center;
+    }
+
+    .item-tarea .prioridad-select {
+        width: 100%; /* Select full width */
+    }
+    
+    /* Ajustes visuales para botones en móvil */
+    .item-tarea .btn-ver-mas span {
+        display: none; /* Ocultar texto "Ver más" para ahorrar espacio */
+    }
+    
+    .item-tarea .btn-ver-mas {
+        padding: 10px; /* Hacerlo cuadrado */
+    }
+}

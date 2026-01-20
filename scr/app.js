@@ -1,4 +1,4 @@
-// Verificar si el usuario está logueado
+
 if (!sessionStorage.getItem("usuarioLogueado")) {
     window.location.href = "../index.html";
 }
@@ -7,13 +7,12 @@ import { Button } from "./components/common/button/Button.js";
 import { Contactos } from "./components/sections/contactos/Contactos.js";
 import {viewContacts, viewNewContact, viewTareas, viewNewTarea} from "./components/layout/nav/NavControlers.js";
 
-// App
 let app = document.getElementById("app");
 
-//section menú
+
 let nav = document.getElementById("nav");
 
-//agregar botones
+
 const btnAgenda = Button(
     "Agenda", 
     "agenda", 
@@ -42,7 +41,7 @@ nav.appendChild(Button(
     viewNewTarea
 ));
 
-// Botón de Cerrar Sesión con ícono
+
 let btnLogout = document.createElement("button");
 
 let iconoLogout = document.createElement("img");
@@ -63,8 +62,24 @@ btnLogout.addEventListener("click", () => {
 
 nav.appendChild(btnLogout);
 
-//section container
+
 let container = document.getElementById("container");
 
 container.innerHTML = "";   
 container.appendChild(Contactos());
+
+async function tareas() {
+    try {
+        let data = await fetch("https://jsonplaceholder.typicode.com/posts");
+        let r = await data.json();
+        console.log(r);
+
+    } catch (error) {
+        console.log(error);
+        
+    }
+    
+}
+tareas();
+
+console.log("Completado.")

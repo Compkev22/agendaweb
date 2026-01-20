@@ -110,3 +110,16 @@ body {
 .login-form button:active {
   transform: translateY(-1px);
 }
+
+
+@media (max-width: 480px) {
+    .login-form {
+        width: 90%;          
+        max-width: 380px;    
+        padding: 2rem 1.5rem; 
+    }
+
+    .login-form h3 {
+        font-size: 1.75rem;   
+    }
+}

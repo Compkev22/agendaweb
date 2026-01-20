@@ -10,17 +10,16 @@ function Tareas() {
     h2.innerHTML = "ToDoList";
     sectionTareas.appendChild(h2);
 
-    // Función para mostrar modal
+
     const mostrarModal = (tarea) => {
-        // Crear overlay
+
         let overlay = document.createElement("div");
         overlay.className = "modal-overlay";
 
-        // Crear contenido del modal
         let modalContent = document.createElement("div");
         modalContent.className = "modal-content";
 
-        // Botón cerrar con ícono
+
         let btnCerrar = document.createElement("button");
         btnCerrar.className = "btn-cerrar";
         
@@ -33,15 +32,15 @@ function Tareas() {
             overlay.remove();
         });
 
-        // Título
+
         let titulo = document.createElement("h2");
         titulo.textContent = tarea.nombre;
 
-        // Información
+
         let infoContainer = document.createElement("div");
         infoContainer.className = "modal-info";
 
-        // Descripción
+
         let divDescripcion = document.createElement("div");
         divDescripcion.className = "info-item";
         divDescripcion.innerHTML = `
@@ -49,7 +48,6 @@ function Tareas() {
             <p>${tarea.descripcion}</p>
         `;
 
-        // Prioridad con ícono
         let divPrioridad = document.createElement("div");
         divPrioridad.className = "info-item";
         let iconoPrioridadSrc = tarea.prioridad === 'Urgente' 
@@ -66,7 +64,7 @@ function Tareas() {
             <p>${badgePrioridad}</p>
         `;
 
-        // Dificultad
+
         let divDificultad = document.createElement("div");
         divDificultad.className = "info-item";
         let badgeDificultad = `<span class="badge ${tarea.dificultad.toLowerCase()}">${tarea.dificultad}</span>`;
@@ -86,7 +84,7 @@ function Tareas() {
         overlay.appendChild(modalContent);
         document.body.appendChild(overlay);
 
-        // Cerrar al hacer click fuera del modal
+
         overlay.addEventListener("click", (e) => {
             if (e.target === overlay) {
                 overlay.remove();

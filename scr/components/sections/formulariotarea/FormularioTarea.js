@@ -44,7 +44,7 @@ let formularioTarea = function () {
     formulario.appendChild(dificultad);
     formulario.appendChild(button);
 
-    // Programación del formulario
+
     formulario.addEventListener("submit", (e) => {
         e.preventDefault();
 
@@ -65,7 +65,7 @@ let formularioTarea = function () {
             console.log("Nueva tarea creada:", tarea);
             TareaList.push(tarea);
             
-            // Guardar en LocalStorage
+
             saveTareasToStorage(TareaList);
             
             alert("Tarea creada exitosamente!");

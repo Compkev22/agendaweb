@@ -83,3 +83,83 @@ body {
 #container::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, #764ba2, #667eea);
 }
+
+
+@media (max-width: 850px) {
+    /* 1. Cambiamos el Layout principal */
+    #app {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        padding: 0;
+        gap: 0;
+        overflow: hidden; /* Evitar doble scroll */
+    }
+
+    /* 2. El Contenedor principal ocupa todo el espacio */
+    #container {
+        flex: 1; /* Toma todo el espacio disponible */
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 0;
+        border-radius: 0; /* Quitamos bordes redondeados en móvil */
+        padding: 20px 15px;
+        padding-bottom: 90px; /* Espacio extra abajo para no tapar contenido con el nav */
+        overflow-y: auto;
+    }
+
+    /* 3. Transformamos el Nav en una Barra Inferior */
+    #nav {
+        flex-direction: row; /* Botones uno al lado del otro */
+        width: 100%;
+        height: auto;
+        max-height: none;
+        position: fixed; /* Fijado abajo */
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+        border-radius: 20px 20px 0 0; /* Solo bordes de arriba redondeados */
+        padding: 12px 15px;
+        gap: 10px;
+        justify-content: space-between; /* Distribuir botones */
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.1); /* Sombra hacia arriba */
+        overflow-x: auto; /* Scroll horizontal si hay muchos botones */
+        
+        /* Ocultar barra de scroll en el menú */
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    #nav::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    /* 4. Ajustes a los botones del menú en móvil */
+    #nav .button {
+        flex: 1; /* Que todos intenten medir lo mismo */
+        min-width: 60px; /* Ancho mínimo para tocar con el dedo */
+        padding: 10px;
+        justify-content: center;
+        flex-direction: column; /* Ícono arriba, texto abajo (opcional) */
+        gap: 5px;
+        font-size: 0.75rem; /* Letra más pequeña */
+    }
+
+    #nav .button img {
+        width: 20px;
+        height: 20px;
+    }
+
+    
+    /* El botón de logout lo hacemos más compacto */
+    .button.btn-logout {
+        margin-top: 0 !important; /* Quitar el margen automático */
+        min-width: auto;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        width: 40px;
+    }
+    .button.btn-logout span { display: none; } /* Solo ícono para logout */
+    .button.btn-logout img { filter: brightness(0.5); width: 24px; height: 24px;}
+}
